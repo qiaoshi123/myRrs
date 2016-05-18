@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="header">
+    <a href="javascrip:;"></a>
+</div>
+<div class="loginInfo">
+<div class="leftInfo">
+    <input type="text" name="user" placeholder="请输入已验证手机/邮箱"/>
+    <p id="userError">请输入有效的手机/邮箱</p>
+    <input type="password" name="password" placeholder="请输入密码">
+    <p id="passwordError">请输入6-16位密码，字母区分大小写</p>
+    <a href="javascript:;" class="forget">忘记密码？</a>
+    <input type="button" value="登录" name="login"/>
+    <h5 class="nouser" >还没有拉勾帐号？<a href="javascript:;" class="reg">立即注册</a></h5>
+    <img src="img/fengexian.jpg" alt="分割线" class="line"/>
+</div>
+    <div class="rightInfo">
+        <h5>使用以下帐号直接登录</h5>
+        <ul class="listimg">
+            <li><img src="img/sina.png" /></li>
+            <li><img src="img/qq.png"></li>
+            <li style="margin-right: 0"><img src="img/weixin.png"></li>
+        </ul>
+        <div class="code">
+            <img src="img/erweima.jpg" class="codeimg"/>
+            <p>[ 扫码下载拉勾APP ]</p>
+        </div>
+    </div>
+</div>
+<script src="js/utils.js"></script>
+<script type="text/javascript" src="js/login.js" charset="UTF-8">
+</script>
+</body>
+</html>

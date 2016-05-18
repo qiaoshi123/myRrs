@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: "Hiragino Sans GB", "Microsoft Yahei", SimSun, Arial, "Helvetica Neue", Helvetica;
+            -webkit-user-select: none;
+        }
+        html,body{
+            width: 1349px;
+            height: 2891px;
+
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+        }
+        h2{
+            cursor: pointer;
+        }
+        em{
+            cursor: pointer;
+        }
+        .header{
+            width:1349px;
+            height: 30px;
+            background: #333;
+            position: relative;
+        }
+        .status{
+            width: 200px;
+            height: 35px;
+            position: absolute;
+            top: 0;
+            left: 30px;
+        }
+        .status li{
+            width: 80px;
+            height: 30px;
+            float: left;
+            margin-top:3px;
+        }
+        .app a{
+            color: #08d7a2;
+            background: url("img/app-head.png") no-repeat;
+            background-position: 0 5px;
+            padding: 2px 0 0 16px;
+            font-size: 14px;
+        }
+        /*左上角app伪类*/
+        .app a:hover{
+            color: #05eaaf;
+        }
+        .loginCom a{
+            font-size: 14px;
+            color: #c4c3c3;
+            float: left;
+            padding: 2px 0 0 6px;
+            border-left: 1px solid #5d5d5d ;
+        }
+        /*左上角 进入企业版伪类*/
+        .loginCom a:hover{
+            color: #fff;
+        }
+        .loginBar{
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            right: 35px;
+            top: 0;
+        }
+        .loginBar li{
+            float:left;
+            width: 50px;
+            height: 30px;
+
+        }
+        .loginBar li a {
+            font-size: 14px;
+            color: #c4c3c3;
+            text-align: center;
+            margin-top: 5px;
+            border-left: 1px solid #5d5d5d;
+        }
+        /*右上角登陆注册的a标签伪类*/
+        .loginBar a:hover{
+            color: #fff;
+        }
+        .topnav{
+            width: 1349px;
+            height:60px;
+            position: relative;
+            border-bottom: 1px solid #e5e5e5;
+            background-color: #fafafa
+        }
+        .topnav_logo{
+            width:250px;
+            height: 60px;
+            position: absolute;
+            top: 0;
+            left: 160px;
+        }
+        .topnav_logo h2{
+             width: 97px;
+             height: 34px;
+             padding: 13px 0 13px 0;
+             background: url("img/logo-head.png")no-repeat center center;
+             float: left;
+         }
+        .topnav_logo div{
+            float: left;
+            margin-top:23px ;
+            height: 30px;
+            margin-left:15px;
+
+        }
+        .topnav_logo div span{
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+            font-size: 18px;
+        }
+        .topnav_logo div em{
+            font-size: 12px;
+            color: #999;
+        }
+        .topnav_subnav{
+            width: 300px;
+            height: 40px;
+            position: absolute;
+            left: 450px;
+            top: 20px;
+        }
+        .topnav_subnav li{
+            float: left;
+            margin:0 22px;
+        }
+        .topnav_subnav li a{
+            height: 40px;
+            width: 45px;
+            font-size: 18px;
+            color: #999;
+            text-align: center;
+            line-height: 35px;
+        }
+        /*顶部导航的伪类,及点击时的下边框样式*/
+        .topnav_subnav li a:hover{
+            border-bottom: 2px solid #00b38a;
+        }
+        .topnav_subnav li a.current{
+            color: #000000;
+            border-bottom: 2px solid #00b38a;
+        }
+        .mainNav{
+            position: absolute;
+            margin-top: 35px;
+            left: 160px;
+            width: 230px;
+            height: 835px;
+        }
+        .submenu{
+            width: 234px;
+            background: #fafafa;
+        }
+        .submenu li a{
+            display:inline-block;
+            padding: 8px 0 0 8px;;
+            margin-left: 18px;
+            white-space: nowrap;
+            color: #555;
+            background-color: transparent;
+
+        }
+        /*<!--li里的a标签的伪类，实现鼠标选中a标签，改变字体颜色，显现出下画线-->；*/
+        .submenu li a:hover{
+            text-decoration: underline;
+            color: #00b38a;
+        }
+        .submenu li {
+            /*padding-top: 15px;*/
+            /*padding-bottom: 15px;*/
+            position: relative;
+
+        }
+        .submenu  h2 {
+            display: block;
+            font-size: 18px;
+            padding-left: 26px;
+            font-weight: 500;
+        }
+        .submenu h2 span {
+            background: url("img/tab_pointer.png")no-repeat center;
+            width: 20px;
+            height: 13px;
+            display: inline-block;
+            background-size: 100% 100%;
+            float: right;
+            margin-top: 5px;
+            background-position-x: 1px;
+        }
+        .mainNav .mainNav_foot{
+            height: 45px;
+            width: 230px;
+            margin-top: 10px;
+            background: #fafafa;
+            border-bottom: 2px solid #00b38a
+        }
+        .mainNav .mainNav_foot a{
+            display: inline-block;
+            font-size: 18px;
+            width: 211px;
+            float: right;
+            color: #555;
+            height: 46px;
+            line-height: 46px;
+            text-indent: 20px;
+        }
+        .mainNav .mainNav_foot a span{
+            display: block;
+            background: url("img/dingyuezhiwei.png")no-repeat center;
+            width: 21px;
+            height: 40px;
+            float: right;
+            margin-top: -4px;
+            margin-right: 14px;
+        }
+        .submenu li span.wrap{
+            width: 228px;
+            display: block;
+            padding: 15px 0 15px 0;
+            z-index: 101;
+            position: relative;
+            border: 2px solid #fafafa;
+        }
+        .submenu li span.wrap.borderRight{
+            border: 2px solid #c9cbce;
+            border-right: none;
+            background: white;
+            width: 232px;
+
+        }
+        /*borderRight给左侧导航span标签的选中的样式，让他右边框为白色，覆盖弹出的内容区边框*/
+        .submenu .menu1Content.a{top: 0;}
+        .submenu .menu1Content.b{top: -48px;}
+        .submenu .menu1Content.c{top: -113px;}
+        .submenu .menu1Content.d{top: -70px;}
+        .submenu .menu1Content.e{top: -338px;}
+        .submenu .menu1Content.f{top: -148px;}
+        .submenu .menu1Content.g{top:-159px;}
+        /*给每个弹出的内容区的定位*/
+        .submenu .menu1Content.show{
+            display: block
+        }
+        /*让内容区显示出来的样式*/
+        .submenu .menu1Content {
+            display: none;
+            width: 540px;
+            padding: 15px 30px 5px;
+            position: absolute;
+            left: 232px;
+            z-index: 100;
+            border: 2px solid #c9cbce;
+            background: #fff;
+
+        }
+        .submenu .menu1Content dl{
+             margin-bottom: 20px;
+             line-height: 22px;
+         }
+        .submenu .menu1Content dt{
+            width: 70px;
+            font-size: 14px;
+            margin: 0;
+            text-align: right;
+            position: absolute
+        }
+        .submenu .menu1Content dl dt a{
+            padding: 0;
+            color: #333;
+            line-height: 28px;
+            text-decoration: underline;
+        }
+        .submenu .menu1Content dd{
+            margin-left:100px;
+            overflow: hidden;
+            display: block;
+            line-height: 22px;
+        }
+        .submenu .menu1Content dl dd a{
+            white-space: nowrap;
+            padding: 0 11px;
+            background: url("img/aaa.png") -29px center no-repeat;
+            color: #777;
+            line-height: 28px;
+            margin-left: -1px;
+        }
+        /*----------------------------------------------------------------*/
+        .main{
+            width: 744px;
+            margin-left: 470px;
+            margin-top: 35px;
+        }
+        .search{
+            width: 740px;
+            height: 37px;
+            position: relative;
+        }
+        .search_a{
+            display: block;
+            width: 570px;
+            height: 23px;
+            padding: 5px 8px 5px 10px;
+            border: 2px solid #00b38a;
+            border-right: 0;
+            font-size: 16px;
+            line-height: 23px;
+            position: absolute;
+            float: left;
+            outline:none;
+        }
+        .search_button{
+            display: block;
+            background: #00a57f;
+            height: 37px;
+            width: 150px;
+            color: #FFF;
+            font-size: 18px;
+            border: 2px solid #00b38a;
+            float: right;
+        }
+        .search .list{
+            width: 587px;
+            position: absolute;
+            left: 0;
+            top: 35px;
+            border: 2px solid #00b38a;
+            padding: 0;
+            margin: 0;
+            z-index: 200;
+            background: #fff;
+            display: none;
+        }
+        .search .list li {
+            width: 526px;
+            height: 30px;
+            overflow: hidden;
+            color: #555;
+            line-height: 30px;
+            padding-left: 5px;
+        }
+
+        .search .list li:hover {
+            background: #00a57f;
+            color: #fff;
+        }
+        .search .list span {
+            display: inline-block;
+            width: 55px;
+            border-left: 1px dashed #ccc;
+            text-align: center;
+            background: aliceblue;
+            font-size: 18px;
+            color: #00a57f;
+            font-size: 14px;
+        }
+
+        #position {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-bottom: 1px dashed #ccc;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        #conpany {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        .search .list span.hotness {
+            display: block;
+            height: 30px;
+            margin-right: 0;
+            width: 100px;
+            background: #fff;
+            font-size: 14px;
+            color: #555;;
+            border: none;
+            float: right;
+            line-height: 30px;
+            text-align: center;
+        }
+        .search .list span a {
+            text-decoration: none;
+            color: #00a57f;
+            display: inline-block;
+        }
+        /*.search span.cursor{*/
+            /*display: block;*/
+            /*color: #999;*/
+            /*z-index: 2;*/
+        /*}*/
+        .hotSearch{
+            width: 744px;
+            height: 22px;
+            margin: 6px 0 18px 0;
+        }
+        .hotSearch dl dt{
+            display:inline-block;
+            width: 70px;
+            font-size: 14px;
+            float: left;
+        }
+        .hotSearch dl dt a{
+            color: #333;
+        }
+        .hotSearch dl dd{
+            display: inline-block;
+            float: left;
+            margin-right: 20px
+        }
+        .hotSearch dl dd a{
+            color: #00b38a
+        }
+        .hotSearch dl dd a:hover{
+            text-decoration: underline;
+        }
+        .banner{
+            width: 744px;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner{
+            width: 612px;
+            height: 640px;
+            /*以后绑定数据这里会发生变化， 现在只是静态的。绑定数据后，根据图片个数 算出高度重新赋值，*/
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .inner div{
+            width: 612px;
+            height: 160px;
+            background: url("img/default.gif")no-repeat center center #e1e1e1;
+        }
+        .inner div img{
+            border: none;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            display: block;
+        }
+        .bannerTip{
+            width: 121px;
+            height: 160px;
+            float: right;
+            position: relative;
+        }
+        /*bannerTip的焦点边框,通过控制它的top进行运动*/
+        .bannerTip em{
+            position: absolute;
+            height: 50px;
+            width: 127px;
+            background:url("img/bannerTipBorder.png")no-repeat 0 0 ;
+            left: -6px;
+            top: 0;
+            z-index: 50;
+            display: block;
+        }
+        .bannerTip_ul {
+            /*margin: 20px 0 20px 0;*/
+        }
+        .bannerTip_ul li{
+            margin-bottom: 5px;
+            border: 4px solid #d3d3d3;
+            width: 113px;
+            height: 42px;
+            z-index: 20;
+        }
+        /*焦点li的阴影*/
+        .bannerTip_ul li i{
+            background: url("img/bannerTipShadow.png") no-repeat;
+            width: 113px;
+            height: 42px;
+            position: absolute;
+            z-index: 21;
+            display: none;
+        }
+        .bannerTip_ul li i.current{
+            display: block;
+        }
+        .recommend{
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .recommend li{
+            width: 113px;
+            height: 113px;
+            float: left;
+            position: relative;
+            margin-right: 10px;
+            overflow: hidden;
+            border: 1px solid #fafafa;
+
+        }
+        .recommend li img{
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .recommend li a{
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 113px;
+            height: 113px;
+            background: rgba(0,179,138,.9);
+            color: #fff;
+
+        }
+        .recommend li a h2{
+            font-size: 24px;
+            height: 24px;
+            line-height: 24px;
+            margin: 10px 8px 8px;
+            font-weight: 400;
+            text-align: center;
+            overflow: hidden;
+        }
+        /*--------------------------------------------*/
+        .Newhot{
+            width:744px;
+        }
+        .Newhot .tip{
+            width:744px;
+            height: 39px;
+            background: #f6f6f6;
+            margin-top: 25px;
+        }
+        .Newhot .tip li{
+            cursor: pointer;
+            display: inline-block;
+            padding: 7px 20px;
+            font-size: 18px;
+            color: #999
+        }
+        .Newhot .tip li.select{
+            border-top: 3px solid #00b38a;
+            background: #fff;
+            color: #333;
+        }
+        .Newhot div{
+            display: none;
+        }
+        .Newhot div.current{
+            display: block;
+        }
+        .hotContent{
+            width: 744px;
+            padding-top: 22px;
+            padding-left: 15px;
+        }
+        .hotContent a{
+            display: inline-block;
+        }
+        .hotContent span{
+            display: inline-block;
+        }
+        .hotContent li{
+            width: 744px;
+
+        }
+        .hotContent .li_one{
+            height:34px ;
+            position: relative;
+        }
+        .hotContent .li_one a.workName{
+            height: 22px;
+            float: left;
+            color: #00b38a;
+            font-size: 16px;
+
+        }
+        .hotContent .li_one span.time{
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+            line-height: 22px
+        }
+        .hotContent .li_one a.company{
+            color: #00b38a;
+            font-size: 16px;
+            position: absolute;
+            left: 420px;
+            top: 0;
+        }
+        .hotContent .li_two{
+            height: 28px;
+            position: relative;
+        }
+        .hotContent .li_two a.money{
+            font-size: 16px;
+            color: #fa6041;
+            margin-right: 20px;
+        }
+        .hotContent .li_two span.companyType{
+            position: absolute;
+            left: 420px;
+            top:0px;
+            font-size: 15px;
+        }
+        .hotContent .li_three{
+            height: 39px;
+            border-bottom: 1px dashed #e1e1e1;
+            background: #fafafa;
+            margin-left: -14px;
+            position: relative;
+        }
+        .hotContent .li_three a.foley{
+            height: 39px;
+            line-height: 39px;
+            padding-right: 20px;
+            color:  #000000;
+        }
+        .hotContent .li_three span{
+            display: inline-block;
+            padding: 0 3px;
+            border: 1px solid #dcdcdc;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .hotContent .li_three .foleyDir{
+            display: inline-block;
+            position: absolute;
+            left: 434px;
+            top:10px
+        }
+        .morecontainer{
+            width: 750px;
+            height: 100px;
+            position: relative;
+            left: 465px;
+            border-bottom: 1px solid #ececed;
+        }
+        .morecontainer a.more{
+            display: block;
+            width: 65px;
+            height: 20px;
+            font-size: 16px;
+            background: #00b38a url("img/more.png") 88px center no-repeat;
+            padding: 5px 40px 5px 15px;
+            color: #fff;
+            position: absolute;
+            right: 0;
+            top:25px;
+        }
+        a.more:hover{
+            background-color: #00a57f;
+        }
+        /*------------------------------------回到顶部*/
+        a.backTop{
+            display: none;
+            background: url("img/huodaodingbu.png")  ;
+            width: 28px;
+            height: 64px;
+            position: fixed;
+            right: 70px;
+            /*bottom: 135px;*/
+            margin-left: 548px;
+            cursor: pointer;
+            background-position: 0 0;
+        }
+        a.backTop:hover{
+            background-position: -28px 0;
+        }
+        .feedback{
+            width: 50px;
+            height: 52px;
+            position: fixed;
+            /*bottom: 75px;*/
+            right: 58px;
+            cursor: pointer;
+        }
+        .feedback a.feedback_bg{
+            width: 30px;
+            height: 30px;
+            margin: 0 auto;
+            background: url("img/fankui.png") left center no-repeat;
+            background-position: 0 0;
+        }
+        .feedback a:hover{
+            background-position: 0 -31px;
+        }
+        .feedback span{
+            display: block;
+            font-size: 12px;
+        }
+/*------------------------------------*/
+        .regsiter{
+            width: 100%;
+            height: 64px;
+            position: fixed;
+            top:200px;
+            z-index: 1000;
+            background: url("img/footerbar_bg.png") repeat-x;
+        }
+        .regsiter em{
+
+            display: block;
+            width: 95px;
+            height: 54px;
+            background: url("img/foot_im.png") no-repeat;
+            position: absolute;
+            top: -54px;
+            left: 50px;
+        }
+        .regsiter img{
+            width: 138px;
+            height: 45px;
+            display: block;
+            border:none;
+            position: absolute;
+            top: 10px;
+            left: 50px;
+        }
+        .regsiter i{
+            display: inline-block;
+            font-family: "Microsoft YaHei", "Hiragino Sans GB";
+        }
+        .regsiter .span1{
+            position: absolute;
+            left: 480px;
+            top: 20px;
+            height: 30px;
+            font-size: 32px;
+            line-height: 38px;
+            color: #dafaf4;;
+            letter-spacing: 3px;
+        }
+        .regsiter .span2{
+            position: absolute;
+            left: 705px;
+            top: 20px;
+            height: 30px;
+            font-size: 32px;
+            line-height: 38px;
+            color: #dafaf4;
+            letter-spacing: 1px;
+        }
+        .regsiter a.join{
+            display: block;
+            width: 145px;
+            height: 64px;
+            color: #dafaf4;
+            font-size: 23px;
+            position: absolute;
+            right: 250px;
+            text-align:center;
+            line-height: 67px;
+            background: url("img/footbar_btbg.png");
+            background-position: 0 0;
+        }
+        a.join:hover{
+            background:lightseagreen;
+        }
+        .regsiter a.zhuCe{
+            display: block;
+            width: 250px;
+            height: 64px;
+            color: #dafaf4;
+            font-size: 23px;
+            position: absolute;
+            right: 0;
+            text-align:center;
+            line-height: 67px;
+            background: url("img/footbar-red.png") repeat-x;
+        }
+        .regsiter a.zhuCe:hover{
+            background: lightcoral;
+        }
+        .linkBox{
+            padding: 15px 0 0;
+            overflow: hidden;
+            width: 750px;
+            position: relative;
+            left: 465px;
+        }
+        .linkBox dt{
+            float: left;
+            width: 70px;
+            margin-top: 2px;
+            font-size: 15px;
+            line-height: 22px
+        }
+        .linkBox dd{
+            margin-left: 70px
+        }
+        .linkBox a{
+            white-space: nowrap;
+            float: left;
+            height: 15px;
+            padding: 8px 9px;
+            font-size: 12px;
+            line-height: 15px;
+            color: #555;
+            text-decoration: none
+        }
+        .linkBox a:hover{
+            color: #0061a6;
+            text-decoration: underline
+        }
+        .linkBox a.amore{
+            text-decoration: underline
+        }
+        .linkBox span{
+            float: left;
+            padding: 7px 0 9px;
+            font-size: 12px;
+            line-height: 15px;
+            color: #999;
+        }
+        .org{
+            height: 180px;
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <ul class="status">
+        <li class="app"><a href="">拉勾APP</a></li>
+        <li class="loginCom"><a href="">进入企业版</a></li>
+    </ul>
+    <ul class="loginBar">
+        <li><a href="login.html" class="right">登录</a></li>
+        <li><a href="" class="left">注册</a></li>
+    </ul>
+</div>
+<div class="topnav">
+    <div class="topnav_logo">
+        <h2></h2>
+        <div>
+            <span>北京站</span>
+            <em>[切换城市]</em>
+        </div>
+    </div>
+    <ul class="topnav_subnav ">
+        <li><a href="javascript:;" class="current">首页</a></li>
+        <li><a href="javascript:;">公司</a></li>
+        <li><a href="javascript:;">一拍</a></li>
+    </ul>
+</div>
+<div class="mainNav" id="mainNav">
+    <ul class="submenu">
+        <li>
+            <span class="wrap">
+            <h2>技术<span></span></h2>
+            <a href="">Java</a><a href="">PHP</a><a href="">C</a><a href="">C++</a>
+            <a href="">Android</a><a href="">IOS</a><a href="">测试</a><a href="">前端开发</a>
+            <a href="">技术经理</a><a href="">技术总监</a><a href="">架构师</a><a href="">CTO</a>
+            </span>
+            <div class="menu1Content a">
+                    <dl>
+                        <dt><a href="">后端开发</a></dt>
+                        <dd>
+                            <a href="">Java</a><a href="">Python</a><a href="">PHP</a><a href="">.NET</a><a href="">C#</a><a href="">C++</a><a href="">C</a><a href="">VB</a>
+                            <a href="">Delphi</a><a href="">Perl</a><a href="">Ruby</a><a href="">Hadoop</a><a href="">Node.js</a><a href="">数据挖掘</a>
+                            <a href="">自然语言处理</a><a href="">搜索算法</a><a href="">精准推荐</a><a href="">全栈工程师</a><a href="">Go</a>
+                            <a href="">ASP</a><a href="">Shell</a><a href="">后端开发其他</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">移动开发</a></dt>
+                        <dd>
+                            <a href="">HTML5</a><a href="">Android</a><a href="">iOS</a><a href="">WP</a><a href="">移动开发其它</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">前端开发</a></dt>
+                        <dd>
+                            <a href="">web前端</a><a href="">Flash</a><a href="">html5</a><a href="">JavaScript</a><a href="">U3D</a>
+                            <a href="">COCOS2D-X</a><a href="">前端开发其它</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">测试</a></dt>
+                        <dd>
+                            <a href="">测试工程师</a><a href="">自动化测试</a><a href="">功能测试</a><a href="">性能测试</a><a href="">测试开发</a>
+                            <a href="">游戏测试</a><a href="">白盒测试</a><a href="">灰盒测试</a><a href="">黑盒测试</a><a href="">手机测试</a>
+                            <a href="">硬件测试</a><a href="">测试经理</a><a href="">测试其它</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">运维</a></dt>
+                        <dd><a href="">运维工程师</a><a href="">运维开发工程师</a><a href="">网络工程师</a><a href="">系统工程师</a>
+                            <a href="">IT支持</a><a href="">IDC</a><a href="">CDN</a><a href="">F5</a><a href="">系统管理员</a><a href="">病毒分析</a>
+                            <a href="">WEB安全</a><a href="">网络安全</a><a href="">系统安全</a><a href="">运维经理</a><a href="">运维其它</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">DBA</a></dt>
+                        <dd><a href="">MySQL</a><a href="">SQLSever</a><a href="">Oracle</a><a href="">DB2</a><a href="">MongoDB</a><a href="">ETL</a>
+                            <a href="">Hive</a><a href="">数据仓库</a><a href="">DBA其它</a></dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">高端职位</a></dt><dd><a href="">技术经理</a><a href="">技术总监</a<a href="">架构师</a><a href="">CTO</a><a href="">运维总监</a>
+                        <a href="">技术合伙人</a><a href="">项目总监</a><a href="">测试总监</a><a href="">安全专家</a>
+                        <a href="">高端技术职位其它</a></dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">项目管理</a></dt>
+                        <dd><a href="">项目经理</a><a href="">项目助理</a></dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">硬件开发</a></dt>
+                        <dd><a href="">硬件</a><a href="">嵌入式</a><a href="">自动化</a><a href="">单片化</a><a href="">电路设计</a><a href="">驱动开发</a>
+                            <a href="">系统集成</a><a href="">FPGA开发</a><a href="">DSP开发</a><a href="">ARM开发</a><a href="">PCB工艺</a>
+                            <a href="">模具设计</a><a href="">热传导</a><a href="">材料工程师</a><a href="">精益工程师</a><a href="">射频工程师</a>
+                            <a href="">硬件开发其它</a></dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">企业软件</a></dt>
+                        <dd><a href="">实施工程师</a><a href="">售前工程师</a><a href="">售后工程师</a><a href="">BI工程师</a>
+                            <a href="">企业软件其它</a></dd>
+                    </dl>
+            </div>
+        </li>
+
+        <li>
+            <span class="wrap">
+            <h2>产品<span></span></h2>
+            <a href="">产品总监</a><a href="">产品经理</a><a href="">移动产品经理</a><a href="">游戏策划</a>
+            </span>
+            <div class="menu1Content b">
+                <dl>
+                    <dt><a href="">产品经理</a></dt>
+                    <dd>
+                        <a href="">产品经理</a><a href="">网页产品经理</a><a href="">移动产品经理</a><a href="">产品助理</a><a href="">数据产品经理</a><a href="">电商产品经理</a><a href="">游戏策划</a><a href="">产品实习生</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">产品设计师</a></dt>
+                    <dd>
+                        <a href="">网页产品设计师</a><a href="">无线产品设计师</a>
+                </dl>
+                <dl>
+                    <dt><a href="">高端职位</a></dt>
+                    <dd>
+                        <a href="">产品部经理</a><a href="">产品总监</a><a href="">游戏制作人</a>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <span class="wrap">
+            <h2>设计<span></span></h2>
+            <a href="">设计总监</a><a href="">UI</a><a href="">UE</a><a href="">交互设计</a><a href="">数据分析</a>
+            </span>
+            <div class="menu1Content c">
+                <dl>
+                    <dt><a href="">视觉设计</a></dt>
+                    <dd>
+                        <a href="">网页设计师</a><a href="">Flash设计师</a><a href="">APP设计师</a><a href="">UI设计师</a><a href="">平面设计师</a><a href="">美术设计师（2D/3D）</a><a href="">广告设计师</a><a href="">多媒体设计师</a>
+                        <a href="">原画师</a><a href="">游戏特效</a><a href="">游戏界面设计师</a><a href="">视觉设计师</a><a href="">游戏场景</a><a href="">游戏角色</a>
+                        <a href="">游戏动作</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">用户研究</a></dt>
+                    <dd>
+                        <a href="">数据分析师</a><a href="">用户研究员</a><a href="">游戏数值策划</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">高端职位</a></dt>
+                    <dd>
+                        <a href="">设计经理/主管</a><a href="">设计总监</a><a href="">视觉设计经理/主管</a><a href="">视觉设计总监</a><a href="">交互设计经理/主管</a><a href="">交互设计总监</a><a href="">用户研究经理/主管</a><a href="">用户研究总监</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">交互设计</a></dt>
+                    <dd>
+                        <a href="">网页交互设计师</a><a href="">交互设计师</a><a href="">无线交互设计师</a><a href="">硬件交互设计师</a>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <span class="wrap">
+            <h2>运营<span></span></h2>
+            <a href="">新媒体运营</a><a href="">数据运营</a><a href="">运营总监</a><a href="">COO</a><a href="">编辑</a>
+            </span>
+            <div class="menu1Content d">
+                <dl>
+                    <dt><a href="">运营</a></dt>
+                    <dd>
+                        <a href="">内容运营</a><a href="">产品运营</a><a href="">数据运营</a><a href="">用户运营</a><a href="">活动</a><a href="">商家运营</a><a href="">品类运营</a><a href="">游戏运营</a>
+                        <a href="">网络推广</a><a href="">运营专员</a><a href="">网店运营</a><a href="">新媒体运营</a><a href="">海外运营</a><a href="">运营经理</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">编辑</a></dt>
+                    <dd>
+                        <a href="">副主编</a><a href="">内容编辑</a><a href="">文案策划</a><a href="">记者</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">客服</a></dt>
+                    <dd>
+                        <a href="">售前咨询</a><a href="">售后客服</a><a href="">淘宝客服</a><a href="">客服经理</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">高端职位</a></dt>
+                    <dd>
+                        <a href="">主编</a><a href="">运营总监</a><a href="">COO</a><a href="">客服总监</a>
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <span class="wrap">
+            <h2>市场与销售<span></span></h2>
+            <a href="">市场推广</a><a href="">市场总监</a><a href="">市场策划</a><a href="">BD</a><a href="">销售总监</a>
+            </span>
+            <div class="menu1Content e">
+                <dl>
+                    <dt><a href="">市场/营销</a></dt>
+                    <dd>
+                        <a href="">市场策划</a><a href="">市场顾问</a><a href="">市场营销</a><a href="">市场推广</a><a href="">SEO</a><a href="">SEM</a><a href="">商务渠道</a><a href="">商业数据分析</a>
+                        <a href="">活动策划</a><a href="">网络营销</a><a href="">海外市场</a><a href="">政府关系</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">公关</a></dt>
+                    <dd>
+                        <a href="">媒介经理</a><a href="">广告协调</a><a href="">品牌公关</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">销售</a></dt>
+                    <dd>
+                        <a href="">销售专员</a><a href="">销售经理</a><a href="">客户代表</a><a href="">大客户代表</a><a href="">BD经理</a><a href="">商务渠道</a><a href="">渠道销售</a><a href="">代理商销售</a>
+                        <a href="">销售助理</a><a href="">电话销售</a><a href="">销售顾问</a><a href="">商品经理</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">高端职位</a></dt>
+                    <dd>
+                        <a href="">市场总监</a><a href="">销售总监</a><a href="">商务总监</a><a href="">CMO</a><a href="">公关总监</a><a href="">采购总监</a><a href="">投资总监</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">供应链</a></dt>
+                    <dd>
+                        <a href="">物流</a><a href="">仓储</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">采购</a></dt>
+                    <dd>
+                        <a href="">采购专员</a><a href="">采购经理</a><a href="">商品经理</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">投资</a></dt>
+                    <dd>
+                        <a href="">分析师</a><a href="">投资顾问</a><a href="">投资经理</a>
+                    </dd>
+                </dl>
+
+            </div>
+        </li>
+        <li>
+            <span class="wrap">
+            <h2>智能<span></span></h2>
+            <a href="">HR</a> <a href="">行政</a><a href="">会计</a><a href="">出纳</a>
+            </span>
+            <div class="menu1Content f ">
+                <dl>
+                    <dt><a href="">人力资源</a></dt>
+                    <dd>
+                        <a href="">人事/HR</a><a href="">培训经理</a><a href="">薪资福利经理</a><a href="">绩效考核经理</a><a href="">人力资源</a><a href="">招聘</a><a href="">HRBP</a><a href="">员工关系</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">行政</a></dt>
+                    <dd>
+                        <a href="">助理</a><a href="">前台</a><a href="">行政</a><a href="">总助</a><a href="">文秘</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">财务</a></dt>
+                    <dd>
+                        <a href="">会计</a><a href="">出纳</a><a href="">财务</a><a href="">结算</a><a href="">税务</a><a href="">审计</a><a href="">风控</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">高端职位</a></dt>
+                    <dd>
+                        <a href="">行政总监/经理</a><a href="">财务总监/经理</a><a href="">HRD/HRM</a><a href="">CF0</a><a href="">CE0</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">法务</a></dt>
+                    <dd>
+                        <a href="">法务</a><a href="">律师</a><a href="">专利</a>
+                    </dd>
+                </dl>
+            </div>
+        </li>
+        <li>
+            <span class="wrap">
+            <h2>金融<span></span></h2>
+            <a href="">投资</a> <a href="">融资</a><a href="">并购</a><a href="">风控</a>
+            </span>
+            <div  class="menu1Content g">
+                <dl>
+                    <dt><a href="">投融资</a></dt>
+                    <dd>
+                        <a href="">投资经理</a><a href="">分析师</a><a href="">投资助理</a><a href="">融资</a><a href="">并购</a><a href="">行业研究</a><a href="">投资者关系</a><a href="">资产管理</a>
+                        <a href="">理财顾问</a><a href="">交易员</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">风控</a></dt>
+                    <dd>
+                        <a href="">风控</a><a href="">资信评估</a><a href="">合规稽查</a><a href="">律师</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">审计税务</a></dt>
+                    <dd>
+                        <a href="">审计</a><a href="">法务</a><a href="">会计</a><a href="">清算</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><a href="">高端职位</a></dt>
+                    <dd>
+                        <a href="">投资总监</a><a href="">融资总监</a><a href="">并购总监</a><a href="">风控总监</a><a href="">副总裁</a>
+                    </dd>
+                </dl>
+            </div>
+        </li>
+    </ul>
+        <div class="mainNav_foot">
+            <h2><a href="">订阅职位<span></span></a></h2>
+        </div>
+</div>
+<div class="main" id="main">
+    <div class="search">
+        <!--<span class="search_a cursor"></span>-->
+        <!--<input type="text" value="" placeholder="请输入职位名称或公司名称" class="search_a "/>-->
+        <input type="text" value="视觉设计" placeholder="" style="color:#999" class="search_a "/>
+        <input type="button" value="搜索" class="search_button" name="btn"/>
+        <ul class="list">
+        </ul>
+    </div>
+    <div class="hotSearch">
+        <dl>
+            <dt><a href="javascript:;">热门搜索</a></dt>
+            <dd><a href="javascript:;">北京热招职位</a></dd>
+            <dd><a href="javascript:;">上海热招职位</a></dd>
+            <dd><a href="javascript:;">急速入职</a></dd>
+            <dd><a href="javascript:;">运营热门职位</a></dd>
+            <dd><a href="javascript:;">Java精选</a></dd>
+            <dd><a href="javascript:;">PHP热门职位</a></dd>
+            <dd><a href="javascript:;">拉钩APP</a></dd>
+        </dl>
+    </div>
+    <div class="banner" id="banner">
+        <div class="inner">
+            <div><img src="" trueImg="img/hongQuanYingXiao.JPG" /></div>
+            <div><img src="" trueImg="img/jiedaibao.JPG"/></div>
+            <div><img src="" trueImg="img/jisuruzhi.JPG"/></div>
+            <div><img src="" trueImg="img/hongquanyingxiao.JPG"/></div>
+        </div>
+        <div class="bannerTip">
+            <em></em>
+        <ul class="bannerTip_ul">
+            <li>
+                <i></i>
+                <img src="img/hongquanyingxiaomin.JPG" />
+            </li>
+            <li>
+                <i class="current"></i>
+                <img src="img/jiedaibaomin.JPG" />
+            </li>
+            <li>
+                <i class="current"></i>
+                <img src="img/jisuruzhimin.JPG"/>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <ul class="recommend">
+        <li>
+            <img src="img/yegou.jpg" alt=""/>
+            <a href="javascript:;">
+                <h2>野狗</h2>
+                <p> 致力于提供全球领先的实时后端云服务</p>
+            </a>
+        </li>
+        <li>
+            <img src="img/yinke.jpg" alt=""/>
+            <a href="javascript:;">
+                <h2>银客网</h2>
+                <p> 具备完整生态的综合性互联网金融集团</p>
+            </a>
+        </li>
+        <li>
+            <img src="img/dianxin.jpg" alt=""/>
+            <a href="javascript:;">
+                <h2>中国电信</h2>
+                <p> 雄厚的背景，稳定的平台</p>
+            </a>
+        </li>
+        <li>
+            <img src="img/tao.jpg" alt=""/>
+            <a href="javascript:;">
+                <h2>淘金科技</h2>
+                <p> 最时尚前沿的互联网金融，深度互联网文化基因的团队</p>
+            </a>
+        </li>
+        <li>
+            <img src="img/huodongshi.jpg" alt=""/>
+            <a href="javascript:;">
+                <h2>活动时</h2>
+                <p> 领先的文娱行业票务电商与数据云服务提供商</p>
+            </a>
+        </li>
+        <li style="margin-right: 0">
+            <img src="img/shisuyun.jpg" alt=""/>
+            <a href="javascript:;">
+                <h2>时速云</h2>
+                <p> 来自IBM等顶级团队打造的新一代Docker容器</p>
+            </a>
+        </li>
+    </ul>
+    <div id="Newhot" class="Newhot">
+        <ul class="tip">
+            <li class="select">热门职位</li>
+            <li>最新职位</li>
+        </ul>
+        <div class="current">
+        <ul class="hotContent">
+            <li class="li_one"><a href="javascript:;" class="workName">高级创意设计师<span>[北京]</span></a><span class="time">3天前发布</span><a href="javascript:;" class="company">拉勾网</a></li>
+            <li class="li_two"><a href="javascript:;" class="money">15k-20k</a><span>经验1-3年 / 本科</span><span class="companyType"> 企业服务 · 招聘 / 成熟型（C轮）</span></li>
+            <li class="li_three"><a href="JavaScript:;" class="foley">“自由、自律、有趣、共同成长”</a>
+            <div class="foleyDir"><span>节日礼物</span><span>年底双薪</span><span>绩效奖金</span></div>
+            </li>
+        </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">JAVA后端开发<span>[北京]</span></a><span class="time">09:06发布</span><a href="javascript:;" class="company">灵伴科技</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验1-3年 / 大专</span><span class="companyType"> 移动互联网 · 硬件 / 成长型（B轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“五险一金+14薪，技术大牛团队，咖啡零食”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>绩效奖金</span><span>年度旅游</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP<span>[北京]</span></a><span class="time">10:07发布</span><a href="javascript:;" class="company">人人行（借贷宝）</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验1-3年 / 本科</span><span class="companyType"> 移动互联网 · 金融 / 成熟型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“九鼎出品；六险一金；帅哥美女多”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>绩效奖金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">算法分析工程师<span>[北京]</span></a><span class="time">2天前发布</span><a href="javascript:;" class="company">华夏智安</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验3-5年 / 硕士</span><span class="companyType"> 移动互联网 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“入职上五险一金；交通补助，饭补，带薪年假”</a>
+                    <div class="foleyDir"><span>带薪年假</span><span>岗位晋升</span><span>五险一金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP高级研发工程师<span>[北京]</span></a><span class="time">2016-04-25</span><a href="javascript:;" class="company">roobo</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">20k-35k</a><span>经验3-5年 / 本科</span><span class="companyType"> 硬件 / 成长型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权奖励，创业氛围，弹性上班，机器人项目”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>技能培训</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">DevOps运维开发工程师<span>[北京]</span></a><span class="time">2016-04-18</span><a href="javascript:;" class="company">找找</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验3-5年 / 本科</span><span class="companyType"> 移动互联网 · 企业服务 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权激励 弹性时间 远程办公 快速成长”</a>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">网站运营<span>[北京]</span></a><span class="time">1天前发布</span><a href="javascript:;" class="company">虫洞翻翻</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">5k-8k</a><span>经验1-3年 / 学历不限</span><span class="companyType"> 电子商务 · 文化娱乐 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“创业大街，期权，核心员工分得代持股份”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>扁平管理</span><span>帅哥多</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">产品经理<span>[北京]</span></a><span class="time">2016-04-15</span><a href="javascript:;" class="company">留学天书</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">10k-12k</a><span>经验不限 / 学历不限</span><span class="companyType"> 移动互联网 · 教育 / 初创型（未融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“股权”</a>
+                    <div class="foleyDir"><span>股票期权</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">JAVA后端开发<span>[北京]</span></a><span class="time">09:06发布</span><a href="javascript:;" class="company">灵伴科技</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验1-3年 / 大专</span><span class="companyType"> 移动互联网 · 硬件 / 成长型（B轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“五险一金+14薪，技术大牛团队，咖啡零食”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>绩效奖金</span><span>年度旅游</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP<span>[北京]</span></a><span class="time">10:07发布</span><a href="javascript:;" class="company">人人行（借贷宝）</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验1-3年 / 本科</span><span class="companyType"> 移动互联网 · 金融 / 成熟型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“九鼎出品；六险一金；帅哥美女多”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>绩效奖金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">算法分析工程师<span>[北京]</span></a><span class="time">2天前发布</span><a href="javascript:;" class="company">华夏智安</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验3-5年 / 硕士</span><span class="companyType"> 移动互联网 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“入职上五险一金；交通补助，饭补，带薪年假”</a>
+                    <div class="foleyDir"><span>带薪年假</span><span>岗位晋升</span><span>五险一金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP高级研发工程师<span>[北京]</span></a><span class="time">2016-04-25</span><a href="javascript:;" class="company">roobo</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">20k-35k</a><span>经验3-5年 / 本科</span><span class="companyType"> 硬件 / 成长型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权奖励，创业氛围，弹性上班，机器人项目”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>技能培训</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">DevOps运维开发工程师<span>[北京]</span></a><span class="time">2016-04-18</span><a href="javascript:;" class="company">找找</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验3-5年 / 本科</span><span class="companyType"> 移动互联网 · 企业服务 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权激励 弹性时间 远程办公 快速成长”</a>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">网站运营<span>[北京]</span></a><span class="time">1天前发布</span><a href="javascript:;" class="company">虫洞翻翻</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">5k-8k</a><span>经验1-3年 / 学历不限</span><span class="companyType"> 电子商务 · 文化娱乐 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“创业大街，期权，核心员工分得代持股份”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>扁平管理</span><span>帅哥多</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">产品经理<span>[北京]</span></a><span class="time">2016-04-15</span><a href="javascript:;" class="company">留学天书</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">10k-12k</a><span>经验不限 / 学历不限</span><span class="companyType"> 移动互联网 · 教育 / 初创型（未融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“股权”</a>
+                    <div class="foleyDir"><span>股票期权</span></div>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">DevOps运维开发工程师<span>[北京]</span></a><span class="time">2016-04-18</span><a href="javascript:;" class="company">找找</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验3-5年 / 本科</span><span class="companyType"> 移动互联网 · 企业服务 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权激励 弹性时间 远程办公 快速成长”</a>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">网站运营<span>[北京]</span></a><span class="time">1天前发布</span><a href="javascript:;" class="company">虫洞翻翻</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">5k-8k</a><span>经验1-3年 / 学历不限</span><span class="companyType"> 电子商务 · 文化娱乐 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“创业大街，期权，核心员工分得代持股份”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>扁平管理</span><span>帅哥多</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">产品经理<span>[北京]</span></a><span class="time">2016-04-15</span><a href="javascript:;" class="company">留学天书</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">10k-12k</a><span>经验不限 / 学历不限</span><span class="companyType"> 移动互联网 · 教育 / 初创型（未融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“股权”</a>
+                    <div class="foleyDir"><span>股票期权</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">高级创意设计师<span>[北京]</span></a><span class="time">3天前发布</span><a href="javascript:;" class="company">拉勾网</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-20k</a><span>经验1-3年 / 本科</span><span class="companyType"> 企业服务 · 招聘 / 成熟型（C轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“自由、自律、有趣、共同成长”</a>
+                    <div class="foleyDir"><span>节日礼物</span><span>年底双薪</span><span>绩效奖金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">JAVA后端开发<span>[北京]</span></a><span class="time">09:06发布</span><a href="javascript:;" class="company">灵伴科技</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验1-3年 / 大专</span><span class="companyType"> 移动互联网 · 硬件 / 成长型（B轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“五险一金+14薪，技术大牛团队，咖啡零食”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>绩效奖金</span><span>年度旅游</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP<span>[北京]</span></a><span class="time">10:07发布</span><a href="javascript:;" class="company">人人行（借贷宝）</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验1-3年 / 本科</span><span class="companyType"> 移动互联网 · 金融 / 成熟型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“九鼎出品；六险一金；帅哥美女多”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>绩效奖金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">算法分析工程师<span>[北京]</span></a><span class="time">2天前发布</span><a href="javascript:;" class="company">华夏智安</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验3-5年 / 硕士</span><span class="companyType"> 移动互联网 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“入职上五险一金；交通补助，饭补，带薪年假”</a>
+                    <div class="foleyDir"><span>带薪年假</span><span>岗位晋升</span><span>五险一金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP高级研发工程师<span>[北京]</span></a><span class="time">2016-04-25</span><a href="javascript:;" class="company">roobo</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">20k-35k</a><span>经验3-5年 / 本科</span><span class="companyType"> 硬件 / 成长型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权奖励，创业氛围，弹性上班，机器人项目”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>技能培训</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">DevOps运维开发工程师<span>[北京]</span></a><span class="time">2016-04-18</span><a href="javascript:;" class="company">找找</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验3-5年 / 本科</span><span class="companyType"> 移动互联网 · 企业服务 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权激励 弹性时间 远程办公 快速成长”</a>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">网站运营<span>[北京]</span></a><span class="time">1天前发布</span><a href="javascript:;" class="company">虫洞翻翻</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">5k-8k</a><span>经验1-3年 / 学历不限</span><span class="companyType"> 电子商务 · 文化娱乐 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“创业大街，期权，核心员工分得代持股份”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>扁平管理</span><span>帅哥多</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">产品经理<span>[北京]</span></a><span class="time">2016-04-15</span><a href="javascript:;" class="company">留学天书</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">10k-12k</a><span>经验不限 / 学历不限</span><span class="companyType"> 移动互联网 · 教育 / 初创型（未融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“股权”</a>
+                    <div class="foleyDir"><span>股票期权</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">JAVA后端开发<span>[北京]</span></a><span class="time">09:06发布</span><a href="javascript:;" class="company">灵伴科技</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验1-3年 / 大专</span><span class="companyType"> 移动互联网 · 硬件 / 成长型（B轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“五险一金+14薪，技术大牛团队，咖啡零食”</a>
+                    <div class="foleyDir"><span>股票期权</span><span>绩效奖金</span><span>年度旅游</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP<span>[北京]</span></a><span class="time">10:07发布</span><a href="javascript:;" class="company">人人行（借贷宝）</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-30k</a><span>经验1-3年 / 本科</span><span class="companyType"> 移动互联网 · 金融 / 成熟型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“九鼎出品；六险一金；帅哥美女多”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>绩效奖金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">算法分析工程师<span>[北京]</span></a><span class="time">2天前发布</span><a href="javascript:;" class="company">华夏智安</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">15k-25k</a><span>经验3-5年 / 硕士</span><span class="companyType"> 移动互联网 / 初创型（天使轮）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“入职上五险一金；交通补助，饭补，带薪年假”</a>
+                    <div class="foleyDir"><span>带薪年假</span><span>岗位晋升</span><span>五险一金</span></div>
+                </li>
+            </ul>
+            <ul class="hotContent">
+                <li class="li_one"><a href="javascript:;" class="workName">PHP高级研发工程师<span>[北京]</span></a><span class="time">2016-04-25</span><a href="javascript:;" class="company">roobo</a></li>
+                <li class="li_two"><a href="javascript:;" class="money">20k-35k</a><span>经验3-5年 / 本科</span><span class="companyType"> 硬件 / 成长型（不需要融资）</span></li>
+                <li class="li_three"><a href="JavaScript:;" class="foley">“期权奖励，创业氛围，弹性上班，机器人项目”</a>
+                    <div class="foleyDir"><span>年底双薪</span><span>节日礼物</span><span>技能培训</span></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+   </div>
+<div class="morecontainer"><a href="javascript:;" class="more">查看更多</a></div>
+
+<a href="javascript:;" class="backTop" id="backTop"></a>
+<div class="feedback" id="feedBack"><a class="feedback_bg" ></a ><span>我要反馈</span></div>
+<div id="regsiter" class="regsiter">
+    <em></em>
+    <img src="img/foot_logo78d.png" alt=""/>
+    <span class="span1">117,627<i>公司</i></span>
+    <span class="span2">1,717,477<i>职位</i></span>
+    <a href="javascript:;" class="join">登录</a>
+    <a href="javascript:;" class="zhuCe">急速注册</a>
+
+</div>
+<div id="linkBox" class="linkBox">
+    <dl>
+    <dt>友情链接</dt>
+        <dd>
+            <a href="javascript:;">手机软件</a>
+            <span>|</span>
+            <a href="javascript:;">中大网校</a>
+            <span>|</span>
+            <a href="javascript:;">人人都是产品经理</a>
+            <span>|</span>
+            <a href="javascript:;">教师招聘</a>
+            <span>|</span>
+            <a href="javascript:;">研究报告</a>
+            <span>|</span>
+            <a href="javascript:;">汽车团购</a>
+            <span>|</span>
+            <a href="javascript:;">创投圈</a>
+            <span>|</span>
+            <a href="javascript:;">创头条</a>
+            <span>|</span>
+            <a href="javascript:;">安卓开发论坛</a>
+            <span>|</span>
+            <a href="javascript:;">新疆人才网</a>
+            <span>|</span>
+            <a href="javascript:;">互联网的一些事</a>
+            <span>|</span>
+            <a href="javascript:;">爱思英语网</a>
+            <span>|</span>
+            <a href="javascript:;">徐州英才网</a>
+            <span>|</span>
+            <a href="javascript:;">thinkpad</a>
+            <span>|</span>
+            <a href="javascript:;">考研网</a>
+            <span>|</span>
+            <a href="javascript:;">深圳人才网</a>
+            <span>|</span>
+            <a href="javascript:;">银行招聘网</a>
+            <span>|</span>
+            <a href="javascript:;">法律咨询网</a>
+            <span>|</span>
+            <a href="javascript:;">兼职吧</a>
+            <span>|</span>
+            <a href="javascript:;">服装人才网</a>
+            <span>|</span>
+            <a href="javascript:;">安卓软件</a>
+            <span>|</span>
+            <a href="javascript:;">银潮网</a>
+            <span>|</span>
+            <a href="javascript:;">创意服务外包</a>
+            <span>|</span>
+            <a href="javascript:;">西陆军事</a>
+            <span>|</span>
+            <a href="javascript:;">中公公务网校</a>
+            <span>|</span>
+            <a href="javascript:;">老人网</a>
+            <span>|</span>
+            <a href="javascript:;">找工作</a>
+            <span>|</span>
+            <a href="javascript:;">招聘网</a>
+            <span>|</span>
+            <a href="javascript:;">前瞻网</a>
+            <span>|</span>
+            <a href="javascript:;">中关村创新创业服务平台</a>
+            <span>|</span>
+            <a href="javascript:;">安徽招聘网</a>
+            <span>|</span>
+            <a href="javascript:;">台州人才网</a>
+            <span>|</span>
+            <a href="javascript:;">苏州人才网</a>
+            <span>|</span>
+            <a href="javascript:;">教师网</a>
+            <span>|</span>
+            <a href="javascript:;">汇博人才网</a>
+            <span>|</span>
+            <a href="javascript:;">中国会计网</a>
+            <span>|</span>
+            <a href="javascript:;">一品威客</a>
+            <span>|</span>
+            <a href="javascript:;">钛媒体网</a>
+            <span>|</span>
+            <a href="javascript:;">齐鲁人才网</a>
+            <span>|</span>
+            <a href="javascript:;">邮编生活网</a>
+            <span>|</span>
+            <a href="javascript:;">乌鲁木齐人才网</a>
+            <span>|</span>
+            <a href="javascript:;">义乌人才网</a>
+            <span>|</span>
+            <a href="javascript:;">PHP100中文网</a>
+            <span>|</span>
+            <a href="javascript:;">培训网</a>
+            <span>|</span>
+            <a href="javascript:;" class="amore">更多</a>
+            <span>|</span>
+        </dd>
+    </dl>
+</div>
+<!--<div class="org"></div>-->
+</body>
+<script type="text/javascript" charset="UTF-8" src="js/utils.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/tween.js"></script>
+<script type="text/javascript" charset="UTF-8" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/20160428event-js.js"></script>
+<script type="text/javascript" src="js/jsonp.js" charset="utf-8"></script>
+<script type="text/javascript" charset="UTF-8" src="js/mainNav.js"></script>
+<script type="text/javascript">
+</script>
+</html>
