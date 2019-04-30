@@ -4,6 +4,8 @@
  testtest
 
  qiaoshiqiaoshi
+ dadadadwww
+ dada
  */
 window.onload=function(){
     var leftInfo=document.getElementById("leftInfo");
