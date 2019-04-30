@@ -1,11 +1,5 @@
 /**
  * Created by qiaoshi on 2016/5/10.
- 
- testtest
-
- qiaoshiqiaoshi
- dadadadwww
- dada
  */
 window.onload=function(){
     var leftInfo=document.getElementById("leftInfo");
